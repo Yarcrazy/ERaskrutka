@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './AuthorList.scss'
+import './Author.scss'
 
-export class AuthorList extends React.Component {
+export class Author extends React.Component {
 
   
 

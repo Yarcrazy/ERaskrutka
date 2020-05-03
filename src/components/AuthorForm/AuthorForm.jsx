@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './Layout.scss'
+import './AuthorForm.scss'
 
-export class Layout extends React.Component {
+export class AuthorForm extends React.Component {
 
   render() {
     return (
