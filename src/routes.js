@@ -9,7 +9,7 @@ export const routes = [
         component: Layout,
     },
     {
-        path: '/authors/:id([0-9]+)',
+        path: '/author/:id([0-9]+)',
         exact: true,
         component: Author,
     },
