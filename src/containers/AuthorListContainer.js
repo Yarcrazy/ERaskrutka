@@ -48,6 +48,7 @@ function mapStateToProps(state, ownProps){
             authorsArrayForShow.push({name: authors[key].name, link: `/author/${key}`, booksNumber: authors[key].books.length});
         }
     }
+    authorsArrayForShow.sort((a, b) => a.name.localeCompare(b.name)); //сортировка по имени автора
 
     return {
         authors: authorsArrayForShow,
