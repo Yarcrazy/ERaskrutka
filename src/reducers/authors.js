@@ -1,31 +1,31 @@
 import {AUTHORS_LOAD} from 'actions/authors';
 
-const dataBackend = {
-    '1': {
-        'name': 'King',
-        'books': [
-            {'title': 'A',},
-            {'title': 'B',},
-            {'title': 'C',},
-        ],
-    },
-    '2': {
-        'name': 'Smith',
-        'books': [
-            {'title': 'D',},
-            {'title': 'E',},
-        ],
-    },
-    '3': {
-        'name': 'Johnson',
-        'books': [
-            {'title': 'F',},
-        ],
-    },
-};
+// const dataBackend = {
+//     '1': {
+//         'name': 'King',
+//         'books': [
+//             {'title': 'A',},
+//             {'title': 'B',},
+//             {'title': 'C',},
+//         ],
+//     },
+//     '2': {
+//         'name': 'Smith',
+//         'books': [
+//             {'title': 'D',},
+//             {'title': 'E',},
+//         ],
+//     },
+//     '3': {
+//         'name': 'Johnson',
+//         'books': [
+//             {'title': 'F',},
+//         ],
+//     },
+// };
 
 const initialState = {
-    loading: false, //Для экрана ожидания
+    loading: false,
     entries: {},
 };
 
@@ -34,7 +34,7 @@ export const authorsReducer = (state = initialState, action) => {
         case AUTHORS_LOAD:
             return {
                 ...state,
-                entries: dataBackend,
+                entries: action.payload,
             };
 
         default:

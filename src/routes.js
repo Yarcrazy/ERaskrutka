@@ -11,7 +11,7 @@ export const routes = [
     {
         path: '/author/:id([0-9]+)',
         exact: true,
-        component: Author,
+        component: Layout,
     },
     {
         path: '*',

@@ -9,7 +9,7 @@ export class Layout extends React.Component {
   render() {
     return (
       <div className={'layout'}>
-        <AuthorListRedux />
+        <AuthorListRedux match={this.props.match}/>
         <AuthorForm />
       </div>
     );
