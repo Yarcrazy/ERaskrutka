@@ -18,7 +18,7 @@ class AuthorListContainer extends React.Component {
                 .then(json => loadAuthors(json))
                 .catch(error => console.log(error))
                 .finally(() => this.setState({isLoaded: true}))
-        }, 2000)
+        }, 1000)
     }
 
     render(){
