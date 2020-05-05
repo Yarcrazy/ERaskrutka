@@ -1,8 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
-
 import {AuthorList} from 'components/AuthorList';
 import {authorsLoad} from 'actions/authors';
+import {store} from "../store";
+import {isEmpty} from 'utilities/isEmpty';
 
 class AuthorListContainer extends React.Component {
 
@@ -12,13 +13,17 @@ class AuthorListContainer extends React.Component {
 
     componentDidMount() {
         const {loadAuthors} = this.props;
-        setTimeout(() => {
-            fetch('/api/data.json')
-                .then(response => response.json())
-                .then(json => loadAuthors(json))
-                .catch(error => console.log(error))
-                .finally(() => this.setState({isLoaded: true}))
-        }, 1000)
+        if (isEmpty(store.getState().authors.entries)) {
+            setTimeout(() => {
+                fetch('/api/data.json')
+                    .then(response => response.json())
+                    .then(json => loadAuthors(json))
+                    .catch(error => console.log(error))
+                    .finally(() => this.setState({isLoaded: true}))
+            }, 1000)
+        } else {
+            this.setState({isLoaded: true});
+        }
     }
 
     render(){

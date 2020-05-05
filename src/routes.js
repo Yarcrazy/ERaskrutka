@@ -1,6 +1,5 @@
 import {Layout} from 'components/Layout';
 import {PageNotFound} from 'pages/PageNotFound';
-import {Author} from "components/Author";
 
 export const routes = [
     {
